@@ -16,7 +16,7 @@ syn match  absEscape      display contained /\\\([nrt\\'"]\|x\x\{2}\)/
 syn match  absIntplVar    display contained /$\h*/
 syn region absString1     start=+c\?'+  skip=+\\\\\|\\'+ end=+'+ oneline contains=@Spell
 syn region absString2     start=+c\?"+  skip=+\\\\\|\\"+ end=+"+ oneline contains=absEscape,absEscapeUnicode,absEscapeError,absIntplVar,absFormat,@Spell
-syn region absBacktick    start=+c\?`+  skip=+\\\\\|\\`+ end=+`+ oneline contains=@Spell
+syn region absBacktick    start=+c\?`+  skip=+\\\\\|\\`+ end=+`+ oneline contains=absEscape,absEscapeUnicode,absEscapeError,absIntplVar,@Spell
 syn region absShellCmd    start=+c\?$(+ skip=+\\\\\|\\(+ end=+)+ oneline contains=absEscape,absEscapeUnicode,absEscapeError,absIntplVar,@Spell
 
 syn keyword absFunction f echo stdin exit rand env eval arg type cd pwd flag sleep require source
